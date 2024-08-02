@@ -24,4 +24,12 @@ public:
      */
     int minRectanglesToCoverPoints(std::vector<std::vector<int>> &points, int w);
 
+    /**
+     * @author pengqq
+     * @brief
+     *      LeetCode.3128 直角三角形
+     * @param[in] grid
+     * @return 可构成直角三角形个数
+     */
+    long long numberOfRightTriangles(std::vector <std::vector<int>> &grid);
 };
