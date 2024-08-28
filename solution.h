@@ -31,5 +31,26 @@ public:
      * @param[in] grid
      * @return 可构成直角三角形个数
      */
-    long long numberOfRightTriangles(std::vector <std::vector<int>> &grid);
+    long long numberOfRightTriangles(std::vector<std::vector<int>> &grid);
+
+    /**
+     * @author pengqq
+     * @brief
+     *      LeetCode.88 合并两个有序数组
+     * @param nums1 初始长度m+n 最终结果合并到nums1
+     * @param m nums1 元素个数
+     * @param nums2
+     * @param n nums2 元素个数
+     */
+    void merge(std::vector<int> &nums1, int m, std::vector<int> &nums2, int n);
+
+    /**
+     * @author pengqq
+     * @brief
+     *      LeetCode.27 移除元素
+     * @param nums 注意需要修改nums
+     * @param val
+     * @return 包含目标元素的个数
+     */
+    int removeElement(std::vector<int> &nums, int val);
 };
