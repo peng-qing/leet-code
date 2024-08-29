@@ -53,4 +53,35 @@ public:
      * @return 包含目标元素的个数
      */
     int removeElement(std::vector<int> &nums, int val);
+
+    /**
+     * @author pengqq
+     * @brief
+     *      LeetCode.26 删除有序数组重复项
+     * @param nums 要求原地删除
+     * @return nums 中唯一元素的个数
+     */
+    int removeDuplicates(std::vector<int> &nums);
+
+    /**
+     * @author pengqq
+     * @brief
+     *      LeetCode.80 删除有序数组重复项  使得出现次数超过两次的元素只出现两次
+     * @param nums 要求原地删除
+     * @return 删除后数组的长度
+     */
+    int removeDuplicates2(std::vector<int>& nums);
+
+    /**
+     * @author pengqq
+     * @brief
+     *      LeetCode.169 多数元素 也就是求众数 保证：要求出现次数 > n/2
+     *      1. hash map item=>count 通解
+     *      2. arr.sort 通过排序 通解
+     *      3. 摩尔投票（仅适用于保证众数出现次数 > n/2）: 假设众数为x 遍历数组 是众数score+1 不是-1
+     *      每次出现0 表示前面众数和非众数互相抵消 重设x 直到最后score>0  特解
+     * @param nums
+     * @return
+     */
+    int majorityElement(std::vector<int>& nums);
 };

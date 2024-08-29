@@ -113,3 +113,77 @@ int Solution::removeElement(std::vector<int> &nums, int val)
     return head;
 }
 
+int Solution::removeDuplicates(std::vector<int> &nums)
+{
+    if (nums.size() == 0)
+    {
+        return 0;
+    }
+    int slow = 1, fast = 1;
+    while (fast < nums.size())
+    {
+        if (nums[fast] != nums[fast - 1])
+        {
+            nums[slow++] = nums[fast];
+        }
+        fast++;
+    }
+
+    return slow;
+}
+
+int Solution::removeDuplicates2(std::vector<int> &nums)
+{
+    if (nums.size() <= 2)
+    {
+        return nums.size();
+    }
+    int slow = 2, fast = 2;
+    while (fast < nums.size())
+    {
+        if (nums[slow - 2] != nums[fast])
+        {
+            nums[slow++] = nums[fast];
+        }
+        fast++;
+    }
+
+    return slow;
+}
+
+int Solution::majorityElement(std::vector<int> &nums)
+{
+    //    if (nums.size() <= 0)
+    //    {
+    //        return 0;
+    //    }
+    //    int x = nums[0], score = 0;
+    //    for (int &num: nums)
+    //    {
+    //        if (score == 0)
+    //        {
+    //            x = num;
+    //        }
+    //        num == x ? score += 1 : score -= 1;
+    //    }
+    //    return x;
+    // ===========================================
+    // 使用map实现
+    if (nums.size() <= 0)
+    {
+        return 0;
+    }
+    std::unordered_map<int, int> counter;
+    int majority = 0, count = 0;
+    for (int num: nums)
+    {
+        counter[num]++;
+        if (counter[num] > count)
+        {
+            majority = num;
+            count = counter[num];
+        }
+    }
+    return majority;
+}
+
